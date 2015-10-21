@@ -1,0 +1,75 @@
+{
+  "name": "manapaho-website",
+  "version": "0.0.1",
+  "description": "The Manapaho Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node --eval \"require('./scripts/development')().catch(err => console.error(err.stack))\"",
+    "development": "babel-node --eval \"require('./scripts/development')().catch(err => console.error(err.stack))\"",
+    "production": "babel-node --eval \"require('./scripts/production')().catch(err => console.error(err.stack))\"",
+    "update-schema": "babel-node --eval \"require('./scripts/updateSchema')().catch(err => console.error(err.stack))\"",
+    "serve-data": "babel-node --eval \"require('./scripts/serveData')().catch(err => console.error(err.stack))\"",
+    "clean": "babel-node --eval \"require('./scripts/clean')().catch(err => console.error(err.stack))\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manapaho/website.git"
+  },
+  "keywords": [
+    "manapaho"
+  ],
+  "author": "Bernd Wessels <wesselsbernd@gmail.com> (https://github.com/BerndWessels)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manapaho/website/issues"
+  },
+  "homepage": "https://github.com/manapaho/website#readme",
+  "engines": {
+    "node": ">=4.1 <5",
+    "npm": ">=3.1 <4"
+  },
+  "metadata": {
+    "graphql": {
+      "schema": "./data/schema.json"
+    }
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.25",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^5.3.2",
+    "babel-plugin-react-transform": "^1.1.1",
+    "babel-relay-plugin-loader": "^0.2.7",
+    "babel-runtime": "^5.8.25",
+    "browser-sync": "^2.9.11",
+    "connect-history-api-fallback": "^1.1.0",
+    "connect-logger": "0.0.1",
+    "cors": "^2.7.1",
+    "del": "^2.0.2",
+    "express": "^4.13.3",
+    "express-graphql": "^0.4.0",
+    "gaze": "^0.5.2",
+    "graphql": "^0.4.7",
+    "graphql-relay": "^0.3.2",
+    "history": "^1.12.5",
+    "html-webpack-plugin": "^1.6.2",
+    "lodash": "^3.10.1",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.1.1",
+    "relay-local-schema": "^0.3.0",
+    "semver-regex": "^1.0.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-hot-middleware": "^2.4.1"
+  },
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-bootstrap": "^0.27.2",
+    "react-dom": "^0.14.0",
+    "react-relay": "^0.4.0",
+    "react-router": "^1.0.0-rc3"
+  }
+}

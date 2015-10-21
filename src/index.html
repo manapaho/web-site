@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+  <title>{%=o.htmlWebpackPlugin.options.title || 'Webpack App'%}</title>
+  {% if (o.htmlWebpackPlugin.files.favicon) { %}
+  <link rel="shortcut icon" href="{%=o.htmlWebpackPlugin.files.favicon%}">
+  {% } %}
+  {% for (var css in o.htmlWebpackPlugin.files.css) { %}
+  <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+  {% } %}
+  <!-- Latest compiled and minified CSS TODO -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div id="root"></div>
+
+<script src="externals/react-with-addons.0.14.0.min.js"></script>
+<script src="externals/react-dom.0.14.0.min.js"></script>
+<script src="externals/ReactRouter.1.0.0-rc3.min.js"></script>
+<script src="externals/relay.0.4.0.min.js"></script>
+
+{% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+<script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+{% } %}
+</body>
+</html>
